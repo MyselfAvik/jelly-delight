@@ -1,0 +1,23 @@
+{
+    "gridSize": 5,
+    "timer": 43.5,
+    "colors": [
+      "Magenta","Magenta","Magenta","Magenta","Magenta",
+      "Magenta","Blue","Blue","Blue","Magenta",
+      "Magenta","Blue","Green","Blue","Magenta",
+      "Magenta","Blue","Blue","Blue","Magenta",
+      "Magenta","Magenta","Magenta","Magenta","Magenta"
+    ],
+    "freezetime" : 8,
+    "star3Time" :30,
+    "star2Time" : 45,
+    "star3coin": 30,
+    "star2coin": 20,
+    "star1coin": 10,
+    "coinsToBeEarnedByAd": 10,
+    "revealCost": 20,
+    "freezeCost": 25,
+    "undoCost": 15,
+    "autoPlaceCost": 10,
+    "showingTime":2
+}

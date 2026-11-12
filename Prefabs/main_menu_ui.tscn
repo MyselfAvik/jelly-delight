@@ -1,0 +1,908 @@
+[gd_scene format=3 uid="uid://cyflsegrwgxah"]
+
+[ext_resource type="Script" uid="uid://3cpxliar05dq" path="res://Scripts/UIManager.cs" id="1_7tdmu"]
+[ext_resource type="Script" uid="uid://c0e7xrjl3qw8l" path="res://Scripts/SafeArea.cs" id="1_pqv25"]
+[ext_resource type="Texture2D" uid="uid://di5r66p5bm2vt" path="res://Sprites/bg.png" id="2_nyh6y"]
+[ext_resource type="Texture2D" uid="uid://cqq563krgg3q6" path="res://Sprites/Bg_2.png" id="3_dgvmb"]
+[ext_resource type="Texture2D" uid="uid://cok8k3or8qd3r" path="res://Sprites/NameLogo.png" id="3_nyh6y"]
+[ext_resource type="Texture2D" uid="uid://dkm8muu03di4w" path="res://Sprites/StartBtn.png" id="4_7tdmu"]
+[ext_resource type="PackedScene" uid="uid://dat4nqcv0ocun" path="res://Prefabs/LevelPanel.tscn" id="6_nplo7"]
+[ext_resource type="FontFile" uid="uid://2xqf5nttgvco" path="res://fonts/Baloo-Regular.ttf" id="8_8quog"]
+[ext_resource type="Texture2D" uid="uid://clpaiyfkjl6xx" path="res://Sprites/Back.png" id="8_y0uw8"]
+[ext_resource type="Texture2D" uid="uid://cnvckbv7gb23c" path="res://Sprites/SignedOut-settings-bg.png" id="10_d016f"]
+[ext_resource type="Texture2D" uid="uid://bildepvpxrpae" path="res://Sprites/Setting-header.png" id="11_uagcf"]
+[ext_resource type="Texture2D" uid="uid://b1m74aj43auva" path="res://Sprites/setting-signout.png" id="15_b47s4"]
+[ext_resource type="Texture2D" uid="uid://duq6ptmr52upw" path="res://Sprites/Close.png" id="16_2mec3"]
+[ext_resource type="Texture2D" uid="uid://cyqqn4m8ps65" path="res://Sprites/google.png" id="17_afsy6"]
+[ext_resource type="Texture2D" uid="uid://buk1x8yibpntb" path="res://Sprites/soundoffbg.png" id="17_toj0w"]
+[ext_resource type="Texture2D" uid="uid://d2qy6k62lkqqh" path="res://Sprites/soundonbg.png" id="18_5xk6s"]
+[ext_resource type="Texture2D" uid="uid://b0701ch7m2grq" path="res://Sprites/apple.png" id="18_7hnls"]
+[ext_resource type="Texture2D" uid="uid://c3yctshk5pmgi" path="res://Sprites/musicofbg.png" id="19_5pa0c"]
+[ext_resource type="Texture2D" uid="uid://c7h0pgpfbkkeb" path="res://Sprites/win-bg.png" id="20_7hnls"]
+[ext_resource type="Texture2D" uid="uid://8rno4hifa0te" path="res://Sprites/musiconbg.png" id="20_odani"]
+[ext_resource type="Texture2D" uid="uid://c1qexixfjf6wi" path="res://Sprites/win-header.png" id="21_iyhix"]
+[ext_resource type="Texture2D" uid="uid://dwej2r7di3ist" path="res://Sprites/Next.png" id="22_toj0w"]
+[ext_resource type="Texture2D" uid="uid://bfgn1eg2ps1g4" path="res://Sprites/home-btn.png" id="23_toj0w"]
+[ext_resource type="Texture2D" uid="uid://cdha6vlxtx10d" path="res://Sprites/restart-btn.png" id="24_5xk6s"]
+[ext_resource type="Texture2D" uid="uid://lqswgjot3s3e" path="res://Sprites/starnew.png" id="25_odani"]
+[ext_resource type="Texture2D" uid="uid://by6e7hhjgdggo" path="res://Sprites/starmid.png" id="26_mq2xs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_02m26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tdmu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ct7f1"]
+font = ExtResource("8_8quog")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_d016f"]
+font = ExtResource("8_8quog")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydscn"]
+font = ExtResource("8_8quog")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_b47s4"]
+font = ExtResource("8_8quog")
+font_size = 70
+
+[sub_resource type="FontVariation" id="FontVariation_afsy6"]
+base_font = ExtResource("8_8quog")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hnls"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iyhix"]
+font = ExtResource("8_8quog")
+font_size = 70
+
+[node name="UIManager" type="CanvasLayer" unique_id=1088259991 node_paths=PackedStringArray("bg", "startPanel", "levelPanel", "startButton", "backButton", "levelGrid", "gamewinPanel", "pausePanel", "resumeButton", "homeButton")]
+layer = 10
+script = ExtResource("1_7tdmu")
+startBg = ExtResource("2_nyh6y")
+levelBg = ExtResource("3_dgvmb")
+bg = NodePath("UI/Bg")
+startPanel = NodePath("UI/SafeArea/StartScreen")
+levelPanel = NodePath("UI/SafeArea/LevelPanel")
+startButton = NodePath("UI/SafeArea/StartScreen/Name/TextureButton")
+backButton = NodePath("UI/SafeArea/LevelPanel/MarginContainer/HBoxContainer/TextureRect")
+levelGrid = NodePath("UI/SafeArea/LevelPanel/Levels")
+gamewinPanel = NodePath("UI/SafeArea/WinPanel")
+pausePanel = NodePath("UI/SafeArea/PausedPanel")
+resumeButton = NodePath("UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/CloseBtn")
+homeButton = NodePath("UI/SafeArea/WinPanel/WinpanelBg/MarginContainer/HBoxContainer/HomeButton")
+
+[node name="UI" type="Control" parent="." unique_id=1740301028]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bg" type="TextureRect" parent="UI" unique_id=500696965]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_dgvmb")
+expand_mode = 1
+
+[node name="SafeArea" type="Control" parent="UI" unique_id=753119971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_pqv25")
+
+[node name="StartScreen" type="Panel" parent="UI/SafeArea" unique_id=1446086182]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_02m26")
+
+[node name="Name" type="TextureRect" parent="UI/SafeArea/StartScreen" unique_id=491145829]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -396.0
+offset_top = 233.0
+offset_right = 398.0
+offset_bottom = 801.0
+grow_horizontal = 2
+texture = ExtResource("3_nyh6y")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="UI/SafeArea/StartScreen/Name" unique_id=198105200]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -238.0
+offset_top = -67.0
+offset_right = 238.0
+offset_bottom = 409.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_7tdmu")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LevelPanel" type="Panel" parent="UI/SafeArea" unique_id=1885061806]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7tdmu")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/SafeArea/LevelPanel" unique_id=1389332351]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 312.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/SafeArea/LevelPanel/MarginContainer" unique_id=917556288]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 150
+
+[node name="TextureRect" type="TextureButton" parent="UI/SafeArea/LevelPanel/MarginContainer/HBoxContainer" unique_id=2013357403]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("8_y0uw8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="UI/SafeArea/LevelPanel/MarginContainer/HBoxContainer" unique_id=1520810288]
+layout_mode = 2
+text = "Levels"
+label_settings = SubResource("LabelSettings_ct7f1")
+
+[node name="Levels" parent="UI/SafeArea/LevelPanel" unique_id=1991349827 instance=ExtResource("6_nplo7")]
+layout_mode = 1
+offset_top = 342.0
+offset_bottom = -106.0
+
+[node name="SettingsPanel" type="Panel" parent="UI/SafeArea" unique_id=1572460344]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsPanelBg" type="TextureRect" parent="UI/SafeArea/SettingsPanel" unique_id=183762859]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -429.5
+offset_right = 387.0
+offset_bottom = 429.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_d016f")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SettingsHeader" type="TextureRect" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg" unique_id=836698714]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.0
+offset_top = -79.153564
+offset_right = 298.1494
+offset_bottom = 81.69287
+grow_horizontal = 2
+texture = ExtResource("11_uagcf")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/SettingsHeader" unique_id=293415739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_d016f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg" unique_id=376892213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 97
+theme_override_constants/margin_bottom = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer" unique_id=852757094]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=1164902479]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 46
+
+[node name="SoundOn" type="TextureButton" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=338716542]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("17_toj0w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SoundOff" type="TextureButton" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=311323593]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("18_5xk6s")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicOn" type="TextureButton" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=901106343]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("19_5pa0c")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicOff" type="TextureButton" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1415995954]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("20_odani")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SignoutButton" type="TextureButton" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=1054426498]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("15_b47s4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer/SignoutButton" unique_id=1596270558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sign-out"
+label_settings = SubResource("LabelSettings_ydscn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="TextureButton" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=2115970735]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_2mec3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer/CloseBtn" unique_id=1526712533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+label_settings = SubResource("LabelSettings_b47s4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeleteButton" type="Button" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=454455509]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = SubResource("FontVariation_afsy6")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hnls")
+text = "Delete Account
+"
+
+[node name="PriavacyPolicyButton" type="Button" parent="UI/SafeArea/SettingsPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=622656888]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0.40392157)
+theme_override_fonts/font = SubResource("FontVariation_afsy6")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hnls")
+text = "Privacy policy
+"
+
+[node name="SignedSettingPanel" type="Panel" parent="UI/SafeArea" unique_id=1147664257]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsPanelBg" type="TextureRect" parent="UI/SafeArea/SignedSettingPanel" unique_id=1035621884]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -429.84644
+offset_right = 387.0
+offset_bottom = 429.84644
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_d016f")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SettingsHeader" type="TextureRect" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg" unique_id=388718160]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.0
+offset_top = -79.153564
+offset_right = 298.1494
+offset_bottom = 81.69287
+grow_horizontal = 2
+texture = ExtResource("11_uagcf")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/SettingsHeader" unique_id=1059875983]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_d016f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg" unique_id=478192830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 97
+theme_override_constants/margin_bottom = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer" unique_id=378878111]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=244583507]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 46
+
+[node name="SoundOn" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1437504536]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("17_toj0w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Soundoff" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=160569546]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("18_5xk6s")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicOn" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1704685011]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("19_5pa0c")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicOff" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1718796703]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("20_odani")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SignInButton" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=433203715]
+visible = false
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_2mec3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/SignInButton" unique_id=751004883]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -55.153564
+offset_right = 173.0
+offset_bottom = 55.846436
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sign In"
+label_settings = SubResource("LabelSettings_ydscn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Googleimg" type="TextureRect" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/SignInButton" unique_id=949349476]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -50.153564
+offset_right = -55.0
+offset_bottom = 61.69287
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_afsy6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AppleSignInButton2" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=2055359580]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_2mec3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/AppleSignInButton2" unique_id=1726610601]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -55.153564
+offset_right = 173.0
+offset_bottom = 55.846436
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sign In"
+label_settings = SubResource("LabelSettings_ydscn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Appleimg" type="TextureRect" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/AppleSignInButton2" unique_id=277614330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -50.153564
+offset_right = -55.0
+offset_bottom = 61.69287
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_7hnls")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CloseBtn" type="TextureButton" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=1209461322]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_2mec3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer/CloseBtn" unique_id=293226891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+label_settings = SubResource("LabelSettings_b47s4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PriavacyPolicyButton" type="Button" parent="UI/SafeArea/SignedSettingPanel/SettingsPanelBg/MarginContainer/VBoxContainer" unique_id=866209827]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.8745098, 0.8745098, 0.8745098, 0.40392157)
+theme_override_fonts/font = SubResource("FontVariation_afsy6")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hnls")
+text = "Privacy policy
+"
+
+[node name="WinPanel" type="Panel" parent="UI/SafeArea" unique_id=134236569]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WinpanelBg" type="TextureRect" parent="UI/SafeArea/WinPanel" unique_id=583651398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -374.21185
+offset_right = 359.0
+offset_bottom = 374.21185
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_7hnls")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="HeaderImage" type="TextureRect" parent="UI/SafeArea/WinPanel/WinpanelBg" unique_id=915897057]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -418.0
+offset_top = -91.78815
+offset_right = 409.3236
+offset_bottom = 170.4237
+grow_horizontal = 2
+texture = ExtResource("21_iyhix")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureButton" type="TextureButton" parent="UI/SafeArea/WinPanel/WinpanelBg" unique_id=1461066863]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -265.2119
+offset_right = 214.0
+offset_bottom = -115.211914
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("22_toj0w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/SafeArea/WinPanel/WinpanelBg/TextureButton" unique_id=670632507]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -55.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next"
+label_settings = SubResource("LabelSettings_iyhix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/SafeArea/WinPanel/WinpanelBg" unique_id=2104036772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -50.0
+offset_right = 125.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/SafeArea/WinPanel/WinpanelBg/MarginContainer" unique_id=570074667]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="HomeButton" type="TextureButton" parent="UI/SafeArea/WinPanel/WinpanelBg/MarginContainer/HBoxContainer" unique_id=1021219758]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("23_toj0w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RestartButton" type="TextureButton" parent="UI/SafeArea/WinPanel/WinpanelBg/MarginContainer/HBoxContainer" unique_id=1434646982]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("24_5xk6s")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/SafeArea/WinPanel/WinpanelBg" unique_id=1400506845]
+layout_mode = 1
+offset_left = 51.0
+offset_top = -159.78815
+offset_right = 271.0
+offset_bottom = 60.211853
+texture = ExtResource("25_odani")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="UI/SafeArea/WinPanel/WinpanelBg" unique_id=1344361841]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -310.00003
+offset_top = -167.78809
+offset_right = -90.0
+offset_bottom = 52.211914
+grow_horizontal = 0
+rotation = 0.6981317
+pivot_offset = Vector2(121.86218, 131.63647)
+texture = ExtResource("25_odani")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="UI/SafeArea/WinPanel/WinpanelBg" unique_id=1535438354]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.0
+offset_top = -229.78815
+offset_right = 109.0
+offset_bottom = -9.788147
+grow_horizontal = 2
+texture = ExtResource("26_mq2xs")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PausedPanel" type="Panel" parent="UI/SafeArea" unique_id=135087232]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausePanelBg" type="TextureRect" parent="UI/SafeArea/PausedPanel" unique_id=1461530799]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -429.84644
+offset_right = 387.0
+offset_bottom = 429.84644
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_d016f")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Header" type="TextureRect" parent="UI/SafeArea/PausedPanel/PausePanelBg" unique_id=866069130]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -309.0
+offset_top = -79.153564
+offset_right = 298.1494
+offset_bottom = 81.69287
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("11_uagcf")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UI/SafeArea/PausedPanel/PausePanelBg/Header" unique_id=735897388]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_d016f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/SafeArea/PausedPanel/PausePanelBg" unique_id=1700836870]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer" unique_id=1515570612]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer" unique_id=330024265]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="SoundOn" type="TextureButton" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1777098420]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("17_toj0w")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Soundoff" type="TextureButton" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1242041687]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("18_5xk6s")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicOn" type="TextureButton" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1889915394]
+visible = false
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("19_5pa0c")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusicOff" type="TextureButton" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/HBoxContainer" unique_id=647164610]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("20_odani")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AppleSignInButton2" type="TextureButton" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer" unique_id=1755752845]
+visible = false
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_2mec3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/AppleSignInButton2" unique_id=1502035822]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -55.153564
+offset_right = 173.0
+offset_bottom = 55.846436
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sign In"
+label_settings = SubResource("LabelSettings_ydscn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Appleimg" type="TextureRect" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/AppleSignInButton2" unique_id=1945798020]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -50.153564
+offset_right = -55.0
+offset_bottom = 61.69287
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_7hnls")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CloseBtn" type="TextureButton" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer" unique_id=1436683212]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("16_2mec3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UI/SafeArea/PausedPanel/PausePanelBg/MarginContainer/VBoxContainer/CloseBtn" unique_id=318576834]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+label_settings = SubResource("LabelSettings_b47s4")
+horizontal_alignment = 1
+vertical_alignment = 1

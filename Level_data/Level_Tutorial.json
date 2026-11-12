@@ -1,0 +1,23 @@
+{
+    "gridSize": 2,
+    "timer": 12.0,
+    "colors": [
+        "Red",
+        "Yellow",
+        "Blue",
+        "Red"
+    ],
+    "isTutorial": 1,
+    "freezetime" : 8,
+    "star3Time" :15,
+    "star2Time" : 20,
+    "star3coin": 30,
+    "star2coin": 20,
+    "star1coin": 10,
+    "coinsToBeEarnedByAd": 10,
+    "revealCost": 10,
+    "freezeCost": 10,
+    "undoCost": 10,
+    "autoPlaceCost": 10,
+    "showingTime":2
+}

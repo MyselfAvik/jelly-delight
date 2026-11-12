@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cif05xjxl6og4"]
+
+[ext_resource type="Script" uid="uid://d03lgn028s8ow" path="res://Scripts/PlayManager.cs" id="1_0qtgj"]
+[ext_resource type="PackedScene" uid="uid://bglyef2fgcdu7" path="res://Prefabs/Tray.tscn" id="1_q6iex"]
+[ext_resource type="Script" uid="uid://c0e7xrjl3qw8l" path="res://Scripts/SafeArea.cs" id="2_5nxkn"]
+[ext_resource type="Texture2D" uid="uid://cqq563krgg3q6" path="res://Sprites/Bg_2.png" id="3_0lxte"]
+[ext_resource type="PackedScene" uid="uid://652cdsg7rpgu" path="res://Prefabs/Jelly.tscn" id="3_shn0w"]
+[ext_resource type="PackedScene" uid="uid://wdejadvqivn4" path="res://Prefabs/two_by_two.tscn" id="4_shn0w"]
+[ext_resource type="PackedScene" uid="uid://f4ii5kly127a" path="res://Prefabs/GamePlayUI.tscn" id="5_pbin4"]
+
+[sub_resource type="Environment" id="Environment_shn0w"]
+background_mode = 3
+sky_custom_fov = 13.9
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.95
+
+[node name="Gameplay" type="Node3D" unique_id=103655663 node_paths=PackedStringArray("boxset", "twobytwo", "timerText", "pauseButton")]
+script = ExtResource("1_0qtgj")
+boxset = [NodePath("Tray/Jelly/jelly_with_rig"), NodePath("Tray/Jelly2/jelly_with_rig"), NodePath("Tray/Jelly3/jelly_with_rig"), NodePath("Tray/Jelly4/jelly_with_rig"), NodePath("Tray/Jelly5/jelly_with_rig"), NodePath("Tray/Jelly6/jelly_with_rig")]
+twobytwo = NodePath("TwoByTwo")
+timerText = NodePath("GameplayCanvas/Control/MarginContainer2/HBoxContainer/TextureRect/Label")
+star3Color = Color(0, 1, 0, 1)
+star2Color = Color(1, 0.8627451, 0.27450982, 1)
+star1Color = Color(1, 0, 0, 1)
+pauseButton = NodePath("GameplayCanvas/Control/MarginContainer2/HBoxContainer/PauseButton")
+
+[node name="GameplayCanvas" type="CanvasLayer" parent="." unique_id=1116646281]
+layer = 0
+
+[node name="Control" parent="GameplayCanvas" unique_id=485166947 instance=ExtResource("5_pbin4")]
+script = ExtResource("2_5nxkn")
+
+[node name="Bg" type="CanvasLayer" parent="." unique_id=1506338641]
+layer = -23
+
+[node name="TextureRect" type="TextureRect" parent="Bg" unique_id=605054398]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0lxte")
+expand_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1290469135]
+environment = SubResource("Environment_shn0w")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1577277519]
+keep_aspect = 0
+projection = 1
+current = true
+fov = 75.5
+size = 11.0
+near = 0.001
+far = 43.48
+
+[node name="TwoByTwo" parent="." unique_id=761574548 node_paths=PackedStringArray("boxset") instance=ExtResource("4_shn0w")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.5975862, 3.3547797, -19.205097)
+boxset = [NodePath("untitled/Jelly"), NodePath("untitled2/Jelly"), NodePath("untitled4/Jelly"), NodePath("untitled3/Jelly")]
+
+[node name="Tray" parent="." unique_id=2052465378 instance=ExtResource("1_q6iex")]
+transform = Transform3D(2.8, 0, 0, 0, 0.06811721, -2.7991714, 0, 2.7991714, 0.06811721, -3.732, -6.648, -6.838)
+
+[node name="Jelly" parent="Tray" unique_id=1288405802 instance=ExtResource("3_shn0w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.18940829, 0.16317014, 0, -0.16317014, 0.18940829, 0.6120649, -0.55661964, -1.0816641)
+
+[node name="Jelly2" parent="Tray" unique_id=1310399468 instance=ExtResource("3_shn0w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.18940823, 0.16317019, 0, -0.16317019, 0.18940823, 1.4114729, -0.55661964, -1.0816641)
+
+[node name="Jelly3" parent="Tray" unique_id=605729825 instance=ExtResource("3_shn0w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.18940823, 0.16317019, 0, -0.16317019, 0.18940823, 2.2407432, -0.55661964, -1.0816641)
+
+[node name="Jelly4" parent="Tray" unique_id=1708500680 instance=ExtResource("3_shn0w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.18940829, 0.16317014, 0, -0.16317014, 0.18940829, 0.6038069, -0.07383585, -0.62513244)
+
+[node name="Jelly5" parent="Tray" unique_id=1695737681 instance=ExtResource("3_shn0w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.18940823, 0.16317019, 0, -0.16317019, 0.18940823, 1.403215, -0.07383585, -0.62513244)
+
+[node name="Jelly6" parent="Tray" unique_id=2091315930 instance=ExtResource("3_shn0w")]
+transform = Transform3D(0.25, 0, 0, 0, 0.18940823, 0.16317019, 0, -0.16317019, 0.18940823, 2.2324853, -0.07383585, -0.62513244)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=736580116]
+shadow_enabled = true
+
+[editable path="GameplayCanvas/Control"]

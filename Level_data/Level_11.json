@@ -1,0 +1,27 @@
+{
+    "gridSize": 3,
+    "timer": 20.0,
+    "colors": [
+        "Yellow",
+        "Cyan",
+        "Yellow",
+        "Cyan",
+        "Magenta",
+        "Cyan",
+        "Yellow",
+        "Cyan",
+        "Yellow"
+    ],
+    "freezetime" : 5,
+    "star3Time" :12,
+    "star2Time" : 15,
+    "star3coin": 30,
+    "star2coin": 20,
+    "star1coin": 10,
+    "coinsToBeEarnedByAd": 10,
+    "revealCost": 10,
+    "freezeCost": 10,
+    "undoCost": 10,
+    "autoPlaceCost": 10,
+    "showingTime":2
+}

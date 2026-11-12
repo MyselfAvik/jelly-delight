@@ -1,0 +1,16 @@
+{
+  "gridSize": 3,
+  "timer": 12.0,
+  "colors": [
+	"Red",
+	"Green",
+	"Red",
+	"Green",
+	"Blue",
+	"Green",
+	"Red",
+	"Green",
+    "Red"
+  ],
+  "isTutorial": 1
+}
